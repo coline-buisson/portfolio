@@ -177,13 +177,11 @@ nav{position:sticky;top:0;z-index:20;background:rgba(252,250,246,.92);backdrop-f
 .page .corps li{margin-bottom:.5rem}
 .page .corps li::marker{color:var(--vrose-fonce)}
 .page .retient{background:var(--vrose-clair);border-left:4px solid var(--vrose-fonce);border-radius:6px 18px 18px 6px;padding:1rem 1.3rem;margin:1.6rem 0}
-.histoire{max-width:70ch;margin-bottom:2.6rem}.histoire p{font-size:1.02rem;line-height:1.8}
-.board{columns:3;column-gap:1.2rem;margin-top:1.5rem}
-.board figure{break-inside:avoid;margin:0 0 1.2rem;background:#fff;border:1px solid #e6dfd2;border-radius:6px;padding:.6rem .6rem .6rem;box-shadow:0 6px 16px rgba(74,49,40,.08);transition:transform .35s cubic-bezier(.3,1.5,.5,1)}
-.board figure:nth-child(odd){transform:rotate(-1.2deg)}.board figure:nth-child(even){transform:rotate(1deg)}
-.board figure:hover{transform:rotate(0) scale(1.03);z-index:2;position:relative}
-.board figcaption{font-size:.72rem;letter-spacing:.04em;color:var(--brun-doux);margin:0 0 .5rem .1rem}
-.board img{width:100%;display:block;border-radius:3px}
+.histoire{max-width:none;margin-bottom:2.8rem}.histoire p{font-size:1.02rem;line-height:1.8}
+.board{columns:3;column-gap:1.4rem;margin-top:1.8rem}
+.board figure{break-inside:avoid;margin:0 0 1.6rem}
+.board figcaption{font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--brun-doux);margin:0 0 .45rem}
+.board img{width:100%;display:block;border-radius:10px}
 @media(max-width:760px){.board{columns:2;column-gap:.8rem}}
 .chiffres{display:flex;flex-wrap:wrap;gap:.8rem;margin:1.2rem 0 2rem}
 .chiffres div{background:var(--vrose);border-radius:26px 26px 26px 6px;padding:1rem 1.4rem;min-width:150px;transition:transform .35s cubic-bezier(.3,1.6,.5,1)}
@@ -431,7 +429,7 @@ function fiche(p){
 }
 const carte=p=>`<button class="carte" data-k="s" data-id="${p.id}"><div class="ph"><img src="${p.cover||`img/${p.id}-1.jpg`}" alt="" onerror="this.remove()">${p.emoji||"✿"}</div><small>${p.tag}</small><h3>${p.titre}</h3><p>${p.resume}</p><span class="lire">Lire la suite</span></button>`;
 function ouvrirAbout(){
- ouvrirPage(`<button class="retour" id="retour">← Retour</button><div class="tag">À propos de moi</div><h2>Mes centres d’intérêt</h2><div class="histoire"><p>Je suis une fille curieuse, dynamique et créative. J’aime prendre le temps de me faire du bien, par le sport comme dans ma cuisine, où je prends plaisir à mijoter de bons petits plats pour les gens que j’aime.</p><p>Depuis toujours, l’art, la mode et la décoration m’attirent : les belles matières, les couleurs, les petits détails qui donnent du caractère à un objet, à une tenue ou à une pièce. Je suis sensible à l’esthétique, mais aussi à ce qu’elle raconte et aux émotions qu’elle fait naître.</p><p>De tout cela, j’ai retenu une chose : j’aime créer, et partager. Faire plaisir, donner envie, créer du lien, c’est ce qui me motive autant dans mes loisirs que dans mon métier. Voici quelques-uns de mes univers.</p></div><div class="blog">${passions.map(carte).join("")}</div>`,null,true);
+ ouvrirPage(`<button class="retour" id="retour">← Retour</button><div class="tag">À propos de moi</div><h2>Mes centres d’intérêt</h2><div class="histoire"><p>Je suis une fille curieuse, dynamique et créative. J’aime prendre du temps pour moi, par le sport comme dans mes activités manuelles. J’aime découvrir de nouvelles cultures et je rêve de voyager aux quatre coins du monde !</p><p>Depuis toujours, l’art, la mode et la décoration m’attirent : les belles matières, les couleurs, les petits détails qui donnent du caractère à un objet, à une tenue ou à une pièce. Je suis sensible à l’esthétique, mais aussi à ce qu’elle raconte et aux émotions qu’elle fait naître.</p><p>De tout cela, j’ai retenu une chose : j’aime créer et partager. Faire plaisir, donner envie, créer du lien, c’est ce qui me motive autant dans mes loisirs que dans mon métier.</p></div><div class="blog">${passions.map(carte).join("")}</div>`,null,true);
 }
 document.addEventListener("click",e=>{
  const c=e.target.closest(".etape.cliquable,.carte");if(!c)return;
