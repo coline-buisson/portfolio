@@ -24,7 +24,7 @@ a{color:inherit}
 h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.2;letter-spacing:-.01em}
 h2{font-size:clamp(2rem,3.6vw,2.7rem);font-weight:500;margin-bottom:.5rem}
 .sous{color:var(--brun-doux);margin-bottom:2.2rem}
-section{padding:5rem 1.5rem;position:relative;overflow:clip}
+section{padding:4rem 1.5rem;position:relative;overflow:clip}
 .wrap{max-width:1000px;margin:0 auto;position:relative;z-index:1}
 #barre{position:fixed;top:0;left:0;right:0;height:3px;background:var(--vrose-fonce);transform-origin:0 50%;transform:scaleX(0);z-index:40}
 
@@ -94,11 +94,11 @@ nav{position:sticky;top:0;z-index:20;background:rgba(252,250,246,.92);backdrop-f
 .etape.e::before{background:var(--vrose-fonce)}
 .etape.cliquable{cursor:pointer}
 .etape.cliquable:hover::before{transform:scale(1.35)}
-.box{display:flex;flex-direction:column;align-items:center;gap:.35rem;height:100%;padding:1.1rem .7rem 1rem;border-radius:20px;border:1px solid var(--vrose);background:rgba(255,255,255,.4);transition:transform .3s,box-shadow .3s,background .3s}
+.box{display:flex;flex-direction:column;align-items:center;gap:.4rem;height:100%;padding:1.1rem .7rem 1rem;border-radius:20px;border:1px solid var(--vrose);background:rgba(255,255,255,.4);transition:transform .3s,box-shadow .3s,background .3s}
 .etape.e .box{background:var(--vrose);border-color:var(--vrose)}
 .etape.cliquable:hover .box{transform:translateY(-5px);box-shadow:0 16px 30px rgba(74,49,40,.18)}
 .date{color:var(--accent);font-weight:500;font-size:.9rem;line-height:1.3}
-.rond-logo{width:84px;height:84px;background:transparent;display:grid;place-items:center;overflow:hidden;margin:.3rem 0;transition:transform .4s cubic-bezier(.3,1.6,.5,1)}
+.rond-logo{width:100%;height:58px;background:transparent;display:grid;place-items:center;overflow:hidden;margin:.1rem 0 0;transition:transform .4s cubic-bezier(.3,1.6,.5,1)}
 .etape.cliquable:hover .rond-logo{transform:scale(1.06)}
 .rond-logo img{max-width:100%;max-height:100%;object-fit:contain;grid-area:1/1}
 .rond-logo .nom{display:none;font-size:.95rem;text-align:center}.rond-logo.sans .nom{display:block}
@@ -109,10 +109,11 @@ nav{position:sticky;top:0;z-index:20;background:rgba(252,250,246,.92);backdrop-f
 .compl p{margin-bottom:.8rem}
 
 /* compétences et outils : défilement horizontal */
+#parcours{padding-bottom:1.5rem}
 #competences{padding:0;overflow:visible}
 #competences{--g:1.5rem}
 @media(min-width:1100px){#competences{--g:max(200px,calc((100% - 1000px)/2))}}
-.stick{position:sticky;top:0;height:100vh;display:flex;flex-direction:column;justify-content:center;gap:1.1rem;overflow:hidden;padding-top:60px}
+.stick{position:sticky;top:0;height:100vh;display:flex;flex-direction:column;justify-content:center;gap:1.1rem;overflow:hidden;padding-top:5.2rem;justify-content:flex-start}
 .stick .tete{padding:0 1.5rem 0 var(--g);max-width:calc(1000px + var(--g))}
 .rang-titre{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brun-doux);padding-left:var(--g);margin-bottom:-.5rem}
 .rang{overflow:hidden;padding:0 1.5rem 0 var(--g);clip-path:inset(0 0 0 calc(var(--g) - 1rem))}
@@ -183,15 +184,18 @@ nav{position:sticky;top:0;z-index:20;background:rgba(252,250,246,.92);backdrop-f
 .chiffres span{font-size:.9rem;color:var(--brun);line-height:1.3;display:block;margin-top:.35rem}
 
 /* contact */
-.fin{background:var(--vrose-clair);text-align:center}
+.fin{background:var(--vrose-clair);text-align:left;padding:2.5rem 1.5rem}
+.fin .wrap{display:grid;grid-template-columns:5fr 6fr;gap:4rem;align-items:stretch;max-width:1000px}
+.photo-contact{display:flex}.fin .cadre img{object-position:70% 25%}
+.txt-contact{align-self:center}
 .fin .rond{width:200px;height:200px;border-radius:50%;overflow:hidden;margin:0 auto 1.5rem;background:var(--vrose);box-shadow:0 0 0 8px var(--fond);transition:transform .5s cubic-bezier(.3,1.6,.5,1)}
 .fin .rond:hover{transform:rotate(-6deg) scale(1.06)}
 .fin .rond img{width:100%;height:100%;object-fit:cover;object-position:70% 28%;transform:scale(1.2);transform-origin:70% 32%}
-.fin h2{max-width:24ch;margin:0 auto 1rem}
-.fin p{max-width:52ch;margin:0 auto 1rem;color:var(--brun)}
+.fin h2{max-width:18ch;margin:0 0 1.2rem}
+.fin p{max-width:52ch;margin:0 0 1rem;color:var(--brun)}
 .contacts .btn{display:inline-flex;align-items:center;gap:.65rem}
 .contacts .btn img{width:28px;height:28px;object-fit:contain}
-.contacts{margin-top:2rem;display:flex;flex-wrap:wrap;gap:.8rem;justify-content:center}
+.contacts{margin-top:2rem;display:flex;flex-wrap:wrap;gap:.8rem;justify-content:flex-start}
 .fin .btn{border-color:var(--brun)}
 .fin .btn:hover{background:var(--vrose);border-color:var(--vrose);color:var(--brun)}
 footer{text-align:center;padding:1.6rem;font-size:.88rem;color:var(--brun-doux);background:var(--vrose-clair)}
@@ -211,6 +215,7 @@ footer{text-align:center;padding:1.6rem;font-size:.88rem;color:var(--brun-doux);
 @media(max-width:760px){
  section{padding:3.5rem 1.3rem}
  .hero .wrap{grid-template-columns:1fr;gap:2rem}
+ .fin .wrap{grid-template-columns:1fr;gap:2rem}
  .hero{min-height:0}.cadre{min-height:0;aspect-ratio:4/5;max-width:340px;margin:0 auto}
  .photo-wrap{order:-1}
  .barre-nav{padding:.8rem 1rem}.droite{gap:.9rem}.marque{white-space:nowrap;font-size:1rem}.lien-nav{font-size:.85rem;white-space:nowrap}
@@ -282,15 +287,18 @@ footer{text-align:center;padding:1.6rem;font-size:.88rem;color:var(--brun-doux);
 </div></section>
 
 <section id="contact" class="fin"><div class="wrap">
- <div class="rond"><img src="img/photo-contact.jpg" alt="Coline Buisson"></div>
- <h2>Et si votre prochain talent, c’était moi ?</h2>
- <p>Diplômée d’un master en Marketing et Communication, je suis à la recherche d’un CDI ou CDD en communication interne, social media ou expérience client.</p>
- <p>Je serais ravie d’échanger avec vous !</p>
+ <div class="photo-contact"><div class="cadre"><img src="img/photo-contact.jpg" alt="Coline Buisson"></div></div>
+ <div class="txt-contact">
+  <h2>Et si votre prochain talent, c’était moi ?</h2>
+  <p>Diplômée d’un master en Marketing et Communication, je suis à la recherche d’un CDI ou CDD en communication interne, social media ou expérience client.</p>
+  <p>Je serais ravie d’échanger avec vous !</p>
  <div class="contacts">
-  <a class="btn" href="mailto:coline.buisson.lnd@gmail.com"><img src="img/icone-email.png" alt="" onerror="this.remove()">coline.buisson.lnd@gmail.com</a>
-  <a class="btn" href="tel:+33611380589"><img src="img/icone-telephone.png" alt="" onerror="this.remove()">06 11 38 05 89</a>
-  <a class="btn" href="https://www.linkedin.com/in/coline-buisson" target="_blank" rel="noopener"><img src="img/icone-linkedin.png" alt="" onerror="this.remove()">LinkedIn</a>
-  <a class="btn" href="Coline_Buisson_CV.pdf" download><img src="img/icone-cv.png" alt="" onerror="this.remove()">Télécharger mon CV</a>
+   <a class="btn" href="mailto:coline.buisson.lnd@gmail.com"><img src="img/icone-email.png" alt="" onerror="this.remove()">coline.buisson.lnd@gmail.com</a>
+   <a class="btn" href="tel:+33611380589"><img src="img/icone-telephone.png" alt="" onerror="this.remove()">06 11 38 05 89</a>
+   <a class="btn" href="https://www.linkedin.com/in/coline-buisson" target="_blank" rel="noopener"><img src="img/icone-linkedin.png" alt="" onerror="this.remove()">LinkedIn</a>
+   <a class="btn" href="Coline_Buisson_CV.pdf" download><img src="img/icone-cv.png" alt="" onerror="this.remove()">Télécharger mon CV</a>
+  </div>
+
  </div>
 </div></section>
 </main>
