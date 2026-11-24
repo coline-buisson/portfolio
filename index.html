@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Coline Buisson – Communication interne</title>
+<meta name="description" content="Coline Buisson, à la recherche d’un CDI ou CDD en communication interne, social media ou expérience client. Mon parcours, mes projets et ce qui me passionne.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌸</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+ --fond:#fcf7ee;--fond2:#f6ecdd;
+ --brun:#4a3128;--brun-doux:#7b5d52;
+ --vrose:#cdaa8c;--vrose-clair:#eadccb;--vrose-fonce:#9a6f50;--accent:#8a5a3c;
+  --grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .5 0 0 0 0 .38 0 0 0 0 .3 0 0 0 .09 0'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)'/%3E%3C/svg%3E");
+ --serif:'Cormorant Garamond',Georgia,serif;--sans:'Jost','Helvetica Neue',Arial,sans-serif}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
+body{font-family:var(--sans);color:var(--brun);background:var(--fond) var(--grain);line-height:1.7;font-size:17px}
+::selection{background:var(--vrose);color:var(--brun)}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.15}
+h2{font-size:clamp(2.2rem,5vw,3.2rem);margin-bottom:.4rem}
+.sous{color:var(--brun-doux);margin-bottom:2.6rem;max-width:56ch}
+section{padding:6rem 1.5rem;position:relative;overflow:clip}
+.wrap{max-width:1000px;margin:0 auto;position:relative;z-index:1}
+#barre{position:fixed;top:0;left:0;right:0;height:3px;background:var(--vrose-fonce);transform-origin:0 50%;transform:scaleX(0);z-index:40}
+
+
+/* menu */
+nav{position:sticky;top:0;z-index:20;background:rgba(252,247,238,.92);backdrop-filter:blur(8px)}
+nav ul{list-style:none;padding:.8rem 1rem;display:flex;gap:1.6rem;justify-content:center;overflow-x:auto;scrollbar-width:none}
+nav ul::-webkit-scrollbar{display:none}
+nav a{text-decoration:none;font-size:.95rem;color:var(--brun-doux);white-space:nowrap;padding-bottom:2px;border-bottom:1px solid transparent;transition:color .2s,border-color .2s}
+nav a:hover,nav a.actif{color:var(--brun);border-color:var(--vrose-fonce)}
+
+/* boutons */
+.btn{display:inline-block;padding:.8rem 1.7rem;border-radius:99px;text-decoration:none;font-weight:500;border:1px solid var(--brun);transition:background .25s,color .25s,border-color .25s}
+.btn.plein{background:var(--brun);color:var(--fond)}
+.btn:hover{background:var(--vrose);color:var(--brun);border-color:var(--vrose)}
+
+/* accueil */
+.hero{padding:3.5rem 1.5rem 6rem}
+.hero .wrap{display:grid;grid-template-columns:minmax(260px,5fr) 6fr;gap:4rem;align-items:center;max-width:1000px}
+.photo-wrap{position:relative}
+.cadre{position:relative;aspect-ratio:4/5;border-radius:999px 999px 26px 26px;overflow:hidden;background:linear-gradient(160deg,var(--vrose),var(--vrose-clair))}
+.cadre img{width:100%;height:100%;object-fit:cover;display:block}
+.hero .txt>*{animation:monte .9s cubic-bezier(.2,.7,.2,1) both}
+.hero .txt>:nth-child(1){animation-delay:.25s}.hero .txt>:nth-child(2){animation-delay:.4s}.hero .txt>:nth-child(3){animation-delay:.55s}.hero .txt>:nth-child(4){animation-delay:.7s}.hero .txt>:nth-child(5){animation-delay:.8s}.hero .txt>:nth-child(6){animation-delay:.9s}
+@keyframes monte{from{opacity:0;transform:translateY(26px)}}
+.hero h1{font-size:clamp(2.8rem,6.5vw,4.6rem);margin-bottom:1.2rem}
+.hero h1 em{color:var(--accent)}
+.hero p{margin-bottom:1rem;max-width:50ch}
+.hero .accroche{font-family:var(--serif);font-size:clamp(1.6rem,2.8vw,2.1rem);line-height:1.25;color:var(--brun);margin-bottom:1.2rem}
+
+/* mots au défilement */
+.mots{height:190vh;background:#8f6a4f var(--grain);color:var(--fond);padding:0}
+.mots .scene{position:sticky;top:12vh;height:72vh;display:grid;place-content:center;justify-items:center;text-align:center;padding:1rem;z-index:1}
+.mots small{font-family:var(--serif);font-size:clamp(1.6rem,4vw,2.4rem);color:var(--fond)}
+.mots .mot{font-family:var(--serif);font-style:italic;font-size:clamp(3rem,10vw,6.5rem);line-height:1.1;color:var(--fond);min-height:1.2em}
+.mots .mot span{display:inline-block;animation:lettre .6s cubic-bezier(.2,.8,.2,1) backwards;transition:transform .25s}
+.mots .mot span:hover{transform:translateY(-.12em) rotate(-4deg)}
+@keyframes lettre{from{opacity:0;transform:translateY(.5em) rotate(8deg)}}
+.mots .fl{width:4.4rem;height:4.4rem;margin-top:.8rem;display:block;--p:#f8f0e2;--s:#5e4130;--c:#e3b45f}
+.points{display:flex;gap:.5rem;justify-content:center;margin-top:1.2rem}
+.points i{width:8px;height:8px;border-radius:50%;background:rgba(248,240,226,.4);transition:background .3s,transform .3s}
+.points i.on{background:var(--fond);transform:scale(1.5)}
+
+/* expériences */
+.xgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.6rem}
+.xcarte,.carte{transform:perspective(800px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .2s ease-out,box-shadow .3s}
+.xcarte{background:var(--vrose);border:0;border-radius:26px;padding:2.2rem 1.5rem 1.8rem;text-align:center;font:inherit;color:inherit;cursor:pointer;display:flex;flex-direction:column;align-items:center}
+.xcarte:hover{box-shadow:0 18px 34px rgba(74,49,40,.2)}
+.logo{width:140px;height:140px;border-radius:50%;background:#fff;display:grid;place-items:center;overflow:hidden;font-family:var(--serif);font-size:1.4rem;line-height:1.1;padding:1.2rem;box-shadow:0 0 0 6px var(--fond);transition:transform .4s cubic-bezier(.3,1.6,.5,1)}
+.xcarte:hover .logo{transform:scale(1.1) rotate(-4deg)}
+.logo img{max-width:100%;max-height:100%;object-fit:contain;grid-area:1/1}
+.logo .nom{grid-area:1/1;text-align:center}
+.xcarte h3{font-size:1.55rem;margin:1.4rem 0 .2rem}
+.xcarte .date{font-size:.93rem;font-weight:500}
+.xcarte .lire{margin-top:1.1rem;border-bottom:1px solid var(--brun);font-size:.95rem}
+.compl{margin-top:2rem;color:var(--brun-doux);max-width:62ch}
+
+/* formation */
+.form{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2rem}
+.form article{border-left:2px solid var(--vrose-fonce);padding-left:1.3rem}
+.form time{color:var(--accent);font-weight:500}
+.form h3{font-size:1.5rem;margin:.1rem 0}
+.form p{color:var(--brun-doux);font-size:.95rem}
+
+/* compétences */
+#competences{background:var(--fond2) var(--grain)}
+.comp{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:1.3rem}
+.comp article{position:relative;overflow:hidden;min-height:190px;background:var(--fond);color:var(--brun);border-radius:18px;padding:1.7rem 1.5rem;transform:perspective(800px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .2s ease-out}
+.comp article:nth-child(even){background:var(--vrose-clair)}
+.comp .fond{position:absolute;inset:0;opacity:0;transition:opacity .45s;background:linear-gradient(160deg,var(--brun-doux),var(--brun))}
+.comp .fond::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(58,38,32,.8),rgba(58,38,32,.2))}
+.comp .fond img{width:100%;height:100%;object-fit:cover;display:block}
+.comp .txt{position:relative;z-index:1;transition:color .3s}
+.comp h3{font-size:1.45rem;margin-bottom:.4rem;color:inherit}
+.comp p{font-size:.94rem;line-height:1.55;opacity:.85}
+.comp article:hover .fond,.comp article:focus .fond{opacity:1}
+.comp article:hover .txt,.comp article:focus .txt{color:#fff}
+
+/* articles (projets et passions) */
+.blog{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2rem}
+.carte{background:none;border:0;text-align:left;font:inherit;color:inherit;cursor:pointer;padding:0;display:flex;flex-direction:column;align-items:stretch;justify-content:flex-start}
+.ph{aspect-ratio:4/3;border-radius:22px;overflow:hidden;background:linear-gradient(135deg,var(--vrose),var(--fond2));display:grid;place-items:center;color:var(--fond);font-size:3rem}
+.ph img{width:100%;height:100%;object-fit:cover;grid-area:1/1;transition:transform .6s}
+.carte:hover .ph img{transform:scale(1.07)}
+.carte small{display:block;margin-top:1rem;color:var(--accent);font-weight:500}
+.carte h3{font-size:1.65rem;margin:.1rem 0 .4rem}
+.carte p{color:var(--brun-doux);font-size:.95rem;line-height:1.55}
+.carte .lire{display:inline-block;align-self:flex-start;margin-top:auto;padding-top:.6rem;border-bottom:1px solid var(--vrose-fonce);font-size:.93rem}
+
+/* page ouverte */
+.page{position:fixed;inset:0;z-index:60;background:var(--fond) var(--grain);overflow-y:auto;overflow-x:hidden;padding:1.2rem 1.5rem 5rem;animation:ouvre .45s cubic-bezier(.2,.7,.2,1)}
+@keyframes ouvre{from{opacity:0;transform:translateY(40px) scale(.98)}}
+.page[hidden]{display:none}
+.page .wrap{max-width:720px}
+.retour{background:none;border:1px solid var(--brun);border-radius:99px;padding:.5rem 1.2rem;font:inherit;color:var(--brun);cursor:pointer;margin-bottom:2rem;transition:background .25s,transform .25s}
+.retour:hover{background:var(--vrose);border-color:var(--vrose);transform:translateX(-4px)}
+.page h2{font-size:clamp(2.2rem,6vw,3.4rem);margin:.3rem 0 1.5rem}
+.page .tag{color:var(--accent);font-weight:500}
+.page p{margin-bottom:1.1rem}
+.page .faits{display:flex;flex-wrap:wrap;gap:.7rem;margin:1.6rem 0}
+.page .faits span{background:var(--vrose);padding:.5rem 1.1rem;border-radius:99px;font-size:.92rem}
+.page .photos{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-top:1.8rem}
+.page .photos .ph{aspect-ratio:1}
+.page .corps ul{padding-left:1.2rem;margin-bottom:1.3rem}
+.page .corps li{margin-bottom:.5rem}
+.page .corps li::marker{color:var(--vrose-fonce)}
+.page .retient{background:var(--vrose-clair);border-left:4px solid var(--vrose-fonce);border-radius:6px 18px 18px 6px;padding:1rem 1.3rem;margin:1.6rem 0}
+.chiffres{display:flex;flex-wrap:wrap;gap:.8rem;margin:1.2rem 0 2rem}
+.chiffres div{background:var(--vrose);border-radius:26px 26px 26px 6px;padding:1rem 1.4rem;min-width:150px;transition:transform .35s cubic-bezier(.3,1.6,.5,1)}
+.chiffres div:hover{transform:translateY(-6px) rotate(-2deg)}
+.chiffres strong{display:block;font-family:var(--serif);font-size:2.6rem;line-height:1;color:var(--brun);font-weight:600}
+.chiffres span{font-size:.9rem;color:var(--brun);line-height:1.3;display:block;margin-top:.35rem}
+
+/* contact */
+.fin{background:var(--vrose-clair) var(--grain);text-align:center}
+.fin .rond{width:170px;height:170px;border-radius:50%;overflow:hidden;margin:0 auto 1.5rem;background:var(--vrose);box-shadow:0 0 0 8px var(--fond);transition:transform .5s cubic-bezier(.3,1.6,.5,1)}
+.fin .rond:hover{transform:rotate(-6deg) scale(1.06)}
+.fin .rond img{width:100%;height:100%;object-fit:cover}
+.fin h2{max-width:20ch;margin:0 auto 1rem}
+.fin p{max-width:48ch;margin:0 auto 2rem;color:var(--brun)}
+.contacts{display:flex;flex-wrap:wrap;gap:.8rem;justify-content:center}
+.fin .btn{border-color:var(--brun)}
+.fin .btn:hover{background:var(--brun);border-color:var(--brun);color:var(--fond)}
+footer{text-align:center;padding:1.6rem;font-size:.88rem;color:var(--brun-doux);background:var(--vrose-clair)}
+
+/* apparition */
+.rev{opacity:0;transform:translateY(22px);transition:opacity .8s,transform .8s}
+.rev.vu{opacity:1;transform:none}
+@media(max-width:760px){
+ section{padding:4rem 1.3rem}
+ .hero .wrap{grid-template-columns:1fr;gap:2.5rem}
+ .cadre{max-width:320px;margin:0 auto}
+ nav ul{justify-content:flex-start}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rev{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div id="barre"></div>
+
+<nav><ul>
+ <li><a href="#accueil">Accueil</a></li><li><a href="#experiences">Expériences</a></li><li><a href="#formation">Formation</a></li>
+ <li><a href="#competences">Compétences</a></li><li><a href="#projets">Projets</a></li><li><a href="#passions">Passions</a></li><li><a href="#contact">Contact</a></li>
+</ul></nav>
+
+<main>
+<section class="hero" id="accueil"><div class="wrap">
+ <div class="photo-wrap" id="photo">
+  <div class="cadre"><!-- Remplace img/photo.jpg par une photo plus grande et plus nette --><img src="img/photo.jpg" alt="Portrait de Coline Buisson"></div>
+ </div>
+ <div class="txt">
+  <h1>Bonjour, moi c’est <em>Coline</em></h1>
+  <p class="accroche">Diplômée d’un Master Marketing et Communication, j’aime créer du lien entre les gens.</p>
+  <p>Je cherche un CDI ou un CDD en communication interne, social media ou expérience client, idéalement dans la mode, le sport ou la beauté.</p>
+  <p>Ces trois univers m’accompagnent depuis toujours, et j’aime y apporter mon énergie et ma bonne humeur.</p>
+ </div>
+</div></section>
+
+<section class="mots" id="mots" aria-label="Quelques mots sur moi">
+ <div class="scene">
+  <small>Je suis</small>
+  <div class="mot" id="mot" role="text"></div>
+  <svg class="fl" id="fleur-mots" aria-hidden="true"><use href="#cosmos"/></svg>
+  <div class="points" id="points"></div>
+ </div>
+</section>
+
+<section id="experiences"><div class="wrap">
+ <h2 class="rev">Mes expériences</h2>
+ <p class="sous rev">Trois stages dans des univers très différents. Clique sur une expérience pour découvrir mes missions et mes résultats.</p>
+ <div class="xgrid rev" id="exp-liste"></div>
+ <p class="compl rev">Et aussi, des emplois saisonniers en grande distribution et en restauration (Hyper U, Intermarché, La Table de Mon Père) : relation client, polyvalence et travail en équipe.</p>
+</div></section>
+
+<section id="formation"><div class="wrap">
+ <h2 class="rev">Ma formation</h2>
+ <p class="sous rev">Un parcours entre langues, marketing et communication.</p>
+ <div class="form rev">
+  <article><time>2024 – 2026</time><h3>Master Marketing et Communication</h3><p>IAE Bordeaux · stratégie de marque, études de marché, communication</p></article>
+  <article><time>2024</time><h3>Échange à Shanghai</h3><p>Shanghai Normal University · immersion en Chine, chinois (HSK 3 et HSKK)</p></article>
+  <article><time>2021 – 2024</time><h3>Licence LEA anglais-chinois</h3><p>Université Clermont Auvergne · langues, cultures, anglais courant</p></article>
+ </div>
+</div></section>
+
+<section id="competences"><div class="wrap">
+ <h2 class="rev">Mes compétences</h2>
+ <p class="sous rev">Ce que mes expériences m’ont appris, et ce que je peux apporter à une équipe. Passe la souris sur un bloc.</p>
+ <div class="comp rev">
+  <article tabindex="0"><div class="fond"><img src="img/comp-interne.jpg" alt="" onerror="this.remove()"></div><div class="txt"><h3>Communication interne</h3><p>Campagnes RH, RSE et Business, intranet, accompagnement du changement.</p></div></article>
+  <article tabindex="0"><div class="fond"><img src="img/comp-communaute.jpg" alt="" onerror="this.remove()"></div><div class="txt"><h3>Animation de communauté</h3><p>Faire vivre un réseau interne de 45 000 personnes sur Viva Engage.</p></div></article>
+  <article tabindex="0"><div class="fond"><img src="img/comp-reseaux.jpg" alt="" onerror="this.remove()"></div><div class="txt"><h3>Réseaux sociaux</h3><p>Instagram, TikTok, Pinterest, partenariats d’influence et contenus UGC.</p></div></article>
+  <article tabindex="0"><div class="fond"><img src="img/comp-video.jpg" alt="" onerror="this.remove()"></div><div class="txt"><h3>Tournage et montage</h3><p>Interviews et reportages, de la prise de vue au montage (PlayPlay, CapCut).</p></div></article>
+  <article tabindex="0"><div class="fond"><img src="img/comp-evenementiel.jpg" alt="" onerror="this.remove()"></div><div class="txt"><h3>Événementiel</h3><p>Appui à l’organisation d’ateliers et d’événements collaborateurs.</p></div></article>
+  <article tabindex="0"><div class="fond"><img src="img/comp-redaction.jpg" alt="" onerror="this.remove()"></div><div class="txt"><h3>Rédaction et storytelling</h3><p>Articles, newsletters, interviews : des messages clairs qui donnent envie de lire.</p></div></article>
+  <article tabindex="0"><div class="fond"><img src="img/comp-analyse.jpg" alt="" onerror="this.remove()"></div><div class="txt"><h3>Analyse et reporting</h3><p>Suivi des KPI et ajustement des actions à partir des résultats.</p></div></article>
+  <article tabindex="0"><div class="fond"><img src="img/comp-client.jpg" alt="" onerror="this.remove()"></div><div class="txt"><h3>Relation client</h3><p>Écoute, polyvalence et esprit d’équipe, appris au contact direct du public.</p></div></article>
+ </div>
+</div></section>
+
+<section id="projets"><div class="wrap">
+ <h2 class="rev">Projets et études de cas</h2>
+ <p class="sous rev">Des travaux menés pendant mon master et mes stages. Clique pour en savoir plus.</p>
+ <div class="blog rev" id="projets-liste"></div>
+</div></section>
+
+<section id="passions"><div class="wrap">
+ <h2 class="rev">Ce qui me passionne</h2>
+ <p class="sous rev">Ce que j’aime en dehors du travail, et qui nourrit ma façon de communiquer.</p>
+ <div class="blog rev" id="passions-liste"></div>
+</div></section>
+
+<section id="contact" class="fin"><div class="wrap">
+ <div class="rond"><img src="img/photo.jpg" alt="Coline Buisson"></div>
+ <h2>Et si on travaillait ensemble ?</h2>
+ <p>À la recherche d’un CDI ou CDD en communication interne, social media ou expérience client, je cherche une équipe à qui apporter mon énergie et ma bonne humeur. Je suis disponible immédiatement et je serais ravie d’échanger avec vous.</p>
+ <div class="contacts">
+  <a class="btn" href="mailto:coline.buisson.lnd@gmail.com">coline.buisson.lnd@gmail.com</a>
+  <a class="btn" href="tel:+33611380589">06 11 38 05 89</a>
+  <a class="btn" href="https://www.linkedin.com/in/coline-buisson" target="_blank" rel="noopener">LinkedIn</a>
+  <a class="btn" href="Coline_Buisson_CV.pdf" download>Télécharger mon CV</a>
+ </div>
+</div></section>
+</main>
+<footer>© 2026 Coline Buisson</footer>
+
+<div class="page" id="page" role="dialog" aria-modal="true" hidden><div class="wrap" id="page-contenu" style="position:relative"></div></div>
+
+<script>
+const reduit=matchMedia("(prefers-reduced-motion:reduce)").matches;
+const souris=matchMedia("(hover:hover) and (pointer:fine)").matches;
+
+/* ---------- Fleur de la section « Je suis » ---------- */
+const pet=Array.from({length:8},(_,i)=>`<use href="#pc" transform="rotate(${i*45})"/>`).join("");
+document.body.insertAdjacentHTML("afterbegin",`<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><path id="pc" d="M0-6C-16-14-18-38-9-45Q0-39 9-45C18-38 16-14 0-6Z"/></defs>
+<symbol id="cosmos" viewBox="-50 -50 100 100"><g style="fill:var(--p,#d4a29b);stroke:var(--s,#9c6058);stroke-width:1.4;stroke-linejoin:round">${pet}</g><circle r="8" style="fill:var(--c,#e3b45f);stroke:var(--s,#9c6058);stroke-width:1.4"/><circle r="3" fill="#b9843a" opacity=".45"/></symbol></svg>`);
+document.getElementById("fleur-mots").innerHTML='<use href="#cosmos"/>';
+
+/* ---------- Inclinaison 3D des blocs, boutons magnétiques ---------- */
+function incline(el,max){
+ el.addEventListener("pointermove",e=>{const r=el.getBoundingClientRect();const x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;el.style.setProperty("--rx",(-y*max)+"deg");el.style.setProperty("--ry",(x*max)+"deg")});
+ el.addEventListener("pointerleave",()=>{el.style.setProperty("--rx","0deg");el.style.setProperty("--ry","0deg")});
+}
+
+/* ---------- Contenu : expériences, projets, passions ---------- */
+const exps=[
+ {id:"capgemini",logo:"capgemini",nom:"Capgemini",titre:"Chargée de communication interne",date:"Stage de janvier à juillet 2026",tag:"Capgemini · Stage de janvier à juillet 2026",
+  chiffres:[["45 000","collaborateurs touchés"],["18 000","vues par post en moyenne"],["80 %","d’ouverture de la newsletter"],["+10","vidéos réalisées"],["2 500","participants à 3 événements"]],
+  texte:["Pendant six mois, j’ai rejoint l’équipe de communication interne de Capgemini en France. Mon rôle : faire en sorte que chaque collaborateur reçoive la bonne information, au bon moment, sous une forme qui donne envie de la lire."],
+  liste:["Conception et pilotage de campagnes de communication interne (RH, RSE, Business) à destination de 45 000 collaborateurs en France.","Animation de Viva Engage et de l’intranet SharePoint, au sein d’une équipe produisant environ 500 publications et articles par mois.","Production de contenus variés : newsletter interne, articles, interviews, affichage dynamique.","Réalisation de plus de 10 vidéos (tournage, montage sur PlayPlay), dont des interviews et des reportages.","Appui à l’organisation d’événements et d’ateliers collaborateurs sur le site de Paris.","Construction des reportings et analyse des KPI pour ajuster les actions."],
+  retient:"Adapter un message à chaque canal et mesurer son impact pour toujours l’améliorer."},
+ {id:"maeli",logo:"maeli",nom:"Maéli Paris",titre:"Community manager",date:"Stage de mars à août 2025",tag:"Maéli Paris · Stage de mars à août 2025",
+  chiffres:[["+20K","abonnés Instagram en 5 mois"],["5","partenariats d’influenceuses"],["500+","contenus UGC par semaine"]],
+  texte:["J’ai pris en charge l’animation des réseaux sociaux de Maéli Paris, entre création de contenus, partenariats avec des créatrices et suivi des performances. Un poste très complet, qui demande autant de créativité que de rigueur."],
+  liste:["Animation des réseaux sociaux de la marque : Instagram, Pinterest et TikTok.","Pilotage de 5 partenariats avec des influenceuses et gestion de plus de 500 contenus UGC par semaine.","Rédaction de contenus éditoriaux (blog, newsletters) et montage vidéo pour YouTube et TikTok.","Suivi des KPI, benchmarks et ajustements de la stratégie de contenu.","Gestion et mise à jour du site web sous Shopify."],
+  retient:"Allier créativité et chiffres : un bon contenu est un contenu qui trouve son public."},
+ {id:"michelin",logo:"michelin",nom:"Michelin",titre:"Assistante de communication interne",date:"Stage de mai à juin 2023",tag:"Michelin, site de Cataroux · Stage de mai à juin 2023",
+  chiffres:[["10","managers d’usine accompagnés"],["100–150","personnes concernées"]],
+  texte:["Une immersion en communication interne au plus près du terrain, sur le site de Cataroux, auprès des équipes de production et de leurs managers."],
+  liste:["Conception de supports print et digitaux pour la communication interne du site.","Accompagnement du changement auprès d’une dizaine de managers d’usine et de leurs équipes.","Rédaction d’un mode opératoire et formation des managers pour qu’ils prennent le relais en autonomie."],
+  retient:"Communiquer, c’est aussi former les autres et leur donner les moyens d’être autonomes."}
+];
+const projets=[
+ {id:"berticot",tag:"Étude de marché · Master",titre:"Berticot : et si le pétillant se passait d’alcool ?",
+  resume:"Une étude de marché sur le développement du vin pétillant désalcoolisé de la marque, présentée à ses responsables.",
+  faits:["300 répondants en quantitatif","10 entretiens en qualitatif","Restitution devant la marque"],
+  texte:["Pendant mon master, j’ai réalisé une étude de marché pour la marque Berticot, sur le développement de son vin pétillant désalcoolisé.","Pour comprendre les attentes des consommateurs, j’ai combiné deux approches : un questionnaire auprès de 300 répondants et 10 entretiens qualitatifs, pour aller plus loin dans leurs motivations.","Les résultats ont été présentés devant les responsables de la marque, avec des recommandations concrètes."]},
+ {id:"michelin",tag:"Accompagnement du changement · Michelin",titre:"Passer le relais aux managers d’usine",
+  resume:"Un mode opératoire et une formation pour rendre les managers autonomes dans leur communication d’équipe.",
+  faits:["10 managers formés","100 à 150 personnes concernées","Supports print et digitaux"],
+  texte:["Lors de mon stage chez Michelin, sur le site de Cataroux, j’ai accompagné une dizaine de managers d’usine dans la communication auprès de leurs équipes.","J’ai rédigé un mode opératoire puis formé les managers, pour qu’ils prennent le relais en autonomie, en m’appuyant sur des supports print et digitaux conçus pour l’occasion.","Ce projet m’a appris à adapter mon message à des publics très différents."]},
+ {id:"maeli",tag:"Réseaux sociaux · Maéli Paris",titre:"+20K abonnés en 5 mois sur Instagram",
+  resume:"Une stratégie de contenus et d’influence pour faire grandir la communauté de la marque.",
+  faits:["+20K abonnés Instagram","5 partenariats d’influenceuses","500+ contenus UGC par semaine"],
+  texte:["Chez Maéli Paris, j’ai animé les réseaux sociaux de la marque (Instagram, Pinterest, TikTok) et piloté cinq partenariats avec des influenceuses.","En suivant les KPI et en réalisant des benchmarks, j’ai ajusté la stratégie de contenu au fil des mois, ce qui a fait gagner plus de 20K abonnés à la marque sur Instagram en 5 mois."]}
+];
+const passions=[
+ {id:"manuel",tag:"Passion",titre:"Les activités manuelles",emoji:"🧶",resume:"Créer de mes mains, prendre le temps et laisser parler ma créativité.",faits:[],
+  texte:["Créer de mes mains me détend et me permet de m’exprimer autrement.","Texte à personnaliser : parle ici de ce que tu aimes fabriquer (couture, peinture, bijoux, DIY…), de tes plus belles réalisations et de ce que cela t’apporte."]},
+ {id:"sport",tag:"Passion",titre:"Le sport",emoji:"🏃‍♀️",resume:"De la danse classique au ski, bouger fait partie de moi depuis toujours.",faits:["10 ans de danse classique","Équitation","Tennis","Ski et randonnée"],
+  texte:["J’ai toujours aimé bouger. Petite, j’ai fait dix ans de danse classique, et l’un de mes rêves était de devenir danseuse étoile !","En grandissant, ce rêve de petite fille s’est évanoui, mais ma passion pour cet art ne s’est jamais envolée. J’ai aussi fait de l’équitation pendant plusieurs années.","Plus grande, je me suis davantage tournée vers les sports collectifs, comme le tennis. Sans oublier ma passion pour le ski, la montagne et les randonnées."]},
+ {id:"voyage",tag:"Passion",titre:"Les langues et les voyages",emoji:"🌏",resume:"Mon semestre à Shanghai et le plaisir de découvrir d’autres cultures.",faits:["Anglais courant","Chinois (HSK 3 et HSKK)"],
+  texte:["Mon échange universitaire à Shanghai a nourri ma curiosité pour les autres cultures et ma façon de communiquer.","Texte à personnaliser : tes souvenirs, tes prochaines destinations."]}
+];
+const carte=(p,k)=>`<button class="carte" data-k="${k}" data-id="${p.id}"><div class="ph"><img src="img/${p.id}-1.jpg" alt="" onerror="this.remove()">${p.emoji||"✿"}</div><small>${p.tag}</small><h3>${p.titre}</h3><p>${p.resume}</p><span class="lire">Lire la suite</span></button>`;
+document.getElementById("exp-liste").innerHTML=exps.map(x=>`<button class="xcarte" data-k="e" data-id="${x.id}"><div class="logo"><img src="img/logo-${x.logo}.png" alt="" onerror="this.remove()"><span class="nom">${x.nom}</span></div><h3>${x.titre}</h3><div class="date">${x.date}</div><span class="lire">Cliquez pour découvrir</span></button>`).join("");
+document.getElementById("projets-liste").innerHTML=projets.map(p=>carte(p,"p")).join("");
+document.getElementById("passions-liste").innerHTML=passions.map(p=>carte(p,"s")).join("");
+if(souris&&!reduit){
+ document.querySelectorAll(".xcarte,.carte").forEach(el=>incline(el,8));
+ document.querySelectorAll(".comp article").forEach(el=>incline(el,6));
+}
+
+/* ---------- Pages ouvertes ---------- */
+const page=document.getElementById("page"),cont=document.getElementById("page-contenu");let dernier;
+function compte(el){
+ const t=el.textContent.trim(),m=t.match(/^(\+?)(\d+(?:[\s  ]\d{3})*)(.*)$/);
+ if(!m||t.includes("–")||reduit)return;
+ const n=parseInt(m[2].replace(/\D/g,""),10),t0=performance.now(),dur=1200;
+ (function pas(now){const k=Math.min(1,(now-t0)/dur),v=Math.round(n*(1-Math.pow(1-k,3)));
+  el.textContent=m[1]+v.toLocaleString("fr-FR")+m[3];if(k<1)requestAnimationFrame(pas);else el.textContent=t})(t0);
+}
+document.addEventListener("click",e=>{
+ const c=e.target.closest(".carte,.xcarte");if(!c)return;
+ const p=({p:projets,s:passions,e:exps})[c.dataset.k].find(x=>x.id===c.dataset.id);dernier=c;
+ const ex=c.dataset.k==="e";
+ cont.innerHTML=`<button class="retour" id="retour">← Retour</button><div class="tag">${p.tag}</div><h2>${p.titre}</h2>`+
+  (p.chiffres?`<div class="chiffres">${p.chiffres.map(n=>`<div><strong>${n[0]}</strong><span>${n[1]}</span></div>`).join("")}</div>`:"")+
+  (p.faits&&p.faits.length?`<div class="faits">${p.faits.map(f=>`<span>${f}</span>`).join("")}</div>`:"")+
+  `<div class="corps">`+p.texte.map(t=>`<p>${t}</p>`).join("")+
+  (p.liste?`<ul>${p.liste.map(l=>`<li>${l}</li>`).join("")}</ul>`:"")+
+  (p.retient?`<p class="retient"><strong>Ce que j’en retiens :</strong> ${p.retient}</p>`:"")+`</div>`+
+  (ex?"":`<div class="photos">${[2,3].map(n=>`<div class="ph"><img src="img/${p.id}-${n}.jpg" alt="" onerror="this.remove()">✿</div>`).join("")}</div>`);
+ page.hidden=false;page.scrollTop=0;document.body.style.overflow="hidden";document.getElementById("retour").focus();
+ cont.querySelectorAll(".chiffres strong").forEach(compte);
+});
+function ferme(){page.hidden=true;document.body.style.overflow="";if(dernier)dernier.focus();}
+cont.addEventListener("click",e=>{if(e.target.id==="retour")ferme();});
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!page.hidden)ferme();});
+
+/* ---------- Mots au défilement, parallaxe, progression ---------- */
+const mots=["curieuse","dynamique","créative","organisée"];
+const sec=document.getElementById("mots"),elMot=document.getElementById("mot"),pts=document.getElementById("points"),fl=document.getElementById("fleur-mots"),barre=document.getElementById("barre");
+pts.innerHTML=mots.map(()=>"<i></i>").join("");let cur=-1;
+function setMot(w){elMot.setAttribute("aria-label",w);elMot.innerHTML=[...w].map((c,i)=>`<span aria-hidden="true" style="animation-delay:${i*45}ms">${c}</span>`).join("")}
+function maj(){
+ const r=sec.getBoundingClientRect(),sc=sec.firstElementChild,tot=sec.offsetHeight-sc.offsetHeight;
+ const pr=Math.min(.999,Math.max(0,(.12*innerHeight-r.top)/tot)),i=Math.floor(pr*mots.length);
+ if(i!==cur){cur=i;setMot(mots[i]);[...pts.children].forEach((d,j)=>d.classList.toggle("on",j===i));}
+ if(!reduit)fl.style.transform=`rotate(${pr*540}deg)`;
+ barre.style.transform=`scaleX(${Math.min(1,scrollY/(document.documentElement.scrollHeight-innerHeight||1))})`;
+}
+let rafScroll=false;
+addEventListener("scroll",()=>{if(rafScroll)return;rafScroll=true;requestAnimationFrame(()=>{rafScroll=false;maj()})},{passive:true});
+addEventListener("resize",maj);maj();
+
+/* ---------- Apparition et menu actif ---------- */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("vu");io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll(".rev").forEach(el=>io.observe(el));
+const liens=document.querySelectorAll("nav a");
+const io2=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)liens.forEach(l=>l.classList.toggle("actif",l.getAttribute("href")==="#"+e.target.id))}),{rootMargin:"-45% 0px -50% 0px"});
+document.querySelectorAll("main section[id]").forEach(s=>io2.observe(s));
+</script>
+</body>
+</html>
