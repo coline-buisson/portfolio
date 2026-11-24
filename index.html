@@ -8,21 +8,21 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌸</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
 <style>
 :root{
  --fond:#fcfaf6;--fond2:#f3eee4;
  --brun:#4a3128;--brun-doux:#7b5d52;
  --vrose:#cdaa8c;--vrose-clair:#eadccb;--vrose-fonce:#9a6f50;--accent:#8a5a3c;
- --serif:'Jost','Helvetica Neue',Arial,sans-serif;--sans:'Jost','Helvetica Neue',Arial,sans-serif}
+ --serif:'Cormorant Garamond',Georgia,'Times New Roman',serif;--sans:'Jost','Helvetica Neue',Arial,sans-serif}
 *{box-sizing:border-box;margin:0}
 html{scroll-behavior:smooth;scroll-padding-top:64px}
 body{font-family:var(--sans);color:var(--brun);background:var(--fond);line-height:1.7;font-size:15px}
 ::selection{background:var(--vrose);color:var(--brun)}
 a{color:inherit}
 :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
-h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.2;letter-spacing:-.01em}
-h2{font-size:clamp(1.6rem,3vw,2.1rem);margin-bottom:.5rem}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.2;letter-spacing:-.01em}
+h2{font-size:clamp(2rem,3.6vw,2.7rem);font-weight:500;margin-bottom:.5rem}
 .sous{color:var(--brun-doux);margin-bottom:2.2rem}
 section{padding:5rem 1.5rem;position:relative;overflow:clip}
 .wrap{max-width:1000px;margin:0 auto;position:relative;z-index:1}
@@ -33,7 +33,7 @@ nav{position:sticky;top:0;z-index:20;background:rgba(252,250,246,.92);backdrop-f
 .barre-nav{display:flex;justify-content:space-between;align-items:center;padding:.9rem 2rem}
 .droite{display:flex;gap:1.8rem;align-items:center}
 .lien-nav{font-size:.95rem;text-decoration:none;color:var(--brun-doux);border-bottom:1px solid transparent;transition:color .2s,border-color .2s}.lien-nav:hover{color:var(--brun);border-color:var(--brun)}
-.marque{font-family:var(--serif);font-size:1.15rem;font-weight:500;text-decoration:none;color:var(--brun);letter-spacing:.02em}
+.marque{font-family:var(--serif);font-size:1.4rem;font-weight:600;text-decoration:none;color:var(--brun);letter-spacing:.02em}
 .cv-lien{font-size:.95rem;text-decoration:none;color:var(--brun);border:1px solid var(--brun);border-radius:99px;padding:.3rem 1.1rem;transition:background .25s,border-color .25s}
 .cv-lien:hover{background:var(--vrose);border-color:var(--vrose)}
 
@@ -60,20 +60,20 @@ nav{position:sticky;top:0;z-index:20;background:rgba(252,250,246,.92);backdrop-f
 .hero .txt>*{animation:monte .9s cubic-bezier(.2,.7,.2,1) both}
 .hero .txt>:nth-child(1){animation-delay:.25s}.hero .txt>:nth-child(2){animation-delay:.4s}.hero .txt>:nth-child(3){animation-delay:.55s}.hero .txt>:nth-child(4){animation-delay:.7s}.hero .txt>:nth-child(5){animation-delay:.85s}
 .hero .cta{margin-top:1.2rem}
-.sec-jesuis{padding:1.6rem 1.5rem;text-align:center;border-top:1px solid #e6dfd2;border-bottom:1px solid #e6dfd2}.sec-jesuis .wrap{max-width:none;margin:0!important}
+.sec-jesuis{padding:1.8rem 1.5rem;text-align:center;background:#8f6a4f}.sec-jesuis .wrap{max-width:none;margin:0!important}
 @keyframes monte{from{opacity:0;transform:translateY(26px)}}
 .hero h1{font-size:clamp(2.2rem,4.6vw,3.3rem);margin-bottom:1.2rem}
 .hero h1 em{color:var(--accent)}
 .hero p{margin-bottom:1rem;max-width:58ch}
-.hero .accroche{font-weight:400;font-family:var(--serif);font-size:clamp(1.3rem,2.1vw,1.6rem);line-height:1.25;color:var(--brun);margin-bottom:1.2rem}
+.hero .accroche{font-weight:500;font-family:var(--serif);font-size:clamp(1.6rem,2.6vw,2rem);line-height:1.25;color:var(--brun);margin-bottom:1.2rem}
 /* bloc « Je suis » et bouton */
 .jesuis-bloc{display:flex;flex-direction:column;align-items:center;gap:1.5rem;margin-top:.5rem}
-.jesuis{display:flex;align-items:center;justify-content:center;gap:1.2rem;color:var(--brun);min-width:0}
-.jesuis small{font-size:1.4rem;color:var(--brun-doux)}
-.jesuis .mot{font-style:italic;font-size:2.4rem;line-height:1.1;min-width:5.6em;text-align:left;color:var(--accent)}
+.jesuis{display:flex;align-items:center;justify-content:center;gap:1.2rem;color:var(--fond);min-width:0}
+.jesuis small{font-size:1.4rem;color:rgba(252,250,246,.8)}
+.jesuis .mot{font-style:italic;font-size:2.4rem;line-height:1.1;min-width:5.6em;text-align:left;color:#fff}
 .mot span{display:inline-block;animation:lettre .6s cubic-bezier(.2,.8,.2,1) backwards}
 @keyframes lettre{from{opacity:0;transform:translateY(.5em) rotate(8deg)}}
-.jesuis .fl{width:2.5rem;height:2.5rem;flex:none;--p:#fff;--s:#8a5a3c;--c:#e3b45f;animation:tourne 14s linear infinite}
+.jesuis .fl{width:2.5rem;height:2.5rem;flex:none;--p:#f8f0e2;--s:#5e4130;--c:#e3b45f;animation:tourne 14s linear infinite}
 @keyframes tourne{to{transform:rotate(360deg)}}
 .cta{font:inherit;font-weight:500;cursor:pointer;background:var(--brun);color:var(--fond);border:0;border-radius:999px;padding:.95rem 2.1rem;box-shadow:0 8px 20px rgba(74,49,40,.25);animation:rebond 2.8s ease-in-out infinite;transition:background .25s}
 @keyframes rebond{0%,55%,100%{transform:none}65%{transform:translateY(-9px)}75%{transform:none}85%{transform:translateY(-4px)}}
@@ -102,7 +102,7 @@ nav{position:sticky;top:0;z-index:20;background:rgba(252,250,246,.92);backdrop-f
 .etape.cliquable:hover .rond-logo{transform:scale(1.06)}
 .rond-logo img{max-width:100%;max-height:100%;object-fit:contain;grid-area:1/1}
 .rond-logo .nom{display:none;font-size:.95rem;text-align:center}.rond-logo.sans .nom{display:block}
-.etape h3{font-size:1.05rem}
+.etape h3{font-size:1.25rem;line-height:1.15}
 .etape .detail{font-size:.85rem;color:var(--brun-doux);line-height:1.45}
 .etape .lire{margin-top:auto;padding-top:.4rem;border-bottom:1px solid var(--brun);font-size:.85rem}
 .compl{margin-top:2.6rem;color:var(--brun-doux)}
@@ -117,8 +117,8 @@ nav{position:sticky;top:0;z-index:20;background:rgba(252,250,246,.92);backdrop-f
 .rang-titre{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brun-doux);padding-left:var(--g);margin-bottom:-.5rem}
 .rang{overflow:hidden;padding:0 1.5rem 0 var(--g);clip-path:inset(0 0 0 calc(var(--g) - 1rem))}
 .piste{display:flex;align-items:flex-start;gap:1rem;width:max-content;will-change:transform}
-.cc{flex:none;width:320px;background:#fff;border:1px solid #e6dfd2;border-radius:4px;padding:1.3rem 1.4rem 1.2rem}
-.cc h3{font-size:1.1rem;font-weight:500;margin-bottom:.6rem}
+.cc{flex:none;width:320px;background:#fff;border:1px solid var(--vrose);border-radius:20px;padding:1.3rem 1.4rem 1.2rem}
+.cc h3{font-size:1.4rem;font-weight:600;margin-bottom:.6rem}
 .cc ul{padding-left:1rem;font-size:.88rem;line-height:1.55;color:var(--brun-doux)}
 .cc li{margin-bottom:.3rem}.cc li::marker{color:var(--vrose-fonce)}
 .cc .faits{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.8rem}
@@ -179,14 +179,14 @@ nav{position:sticky;top:0;z-index:20;background:rgba(252,250,246,.92);backdrop-f
 .chiffres{display:flex;flex-wrap:wrap;gap:.8rem;margin:1.2rem 0 2rem}
 .chiffres div{background:var(--vrose);border-radius:26px 26px 26px 6px;padding:1rem 1.4rem;min-width:150px;transition:transform .35s cubic-bezier(.3,1.6,.5,1)}
 .chiffres div:hover{transform:translateY(-6px) rotate(-2deg)}
-.chiffres strong{display:block;font-family:var(--serif);font-size:2.1rem;line-height:1;color:var(--brun);font-weight:600}
+.chiffres strong{font-variant-numeric:lining-nums;display:block;font-family:var(--serif);font-size:2.1rem;line-height:1;color:var(--brun);font-weight:600}
 .chiffres span{font-size:.9rem;color:var(--brun);line-height:1.3;display:block;margin-top:.35rem}
 
 /* contact */
 .fin{background:var(--vrose-clair);text-align:center}
 .fin .rond{width:200px;height:200px;border-radius:50%;overflow:hidden;margin:0 auto 1.5rem;background:var(--vrose);box-shadow:0 0 0 8px var(--fond);transition:transform .5s cubic-bezier(.3,1.6,.5,1)}
 .fin .rond:hover{transform:rotate(-6deg) scale(1.06)}
-.fin .rond img{width:100%;height:100%;object-fit:cover;object-position:70% 28%;transform:scale(1.7);transform-origin:72% 30%}
+.fin .rond img{width:100%;height:100%;object-fit:cover;object-position:70% 28%;transform:scale(1.2);transform-origin:70% 32%}
 .fin h2{max-width:24ch;margin:0 auto 1rem}
 .fin p{max-width:52ch;margin:0 auto 1rem;color:var(--brun)}
 .contacts .btn{display:inline-flex;align-items:center;gap:.65rem}
