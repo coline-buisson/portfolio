@@ -177,6 +177,14 @@ nav{position:sticky;top:0;z-index:20;background:rgba(252,250,246,.92);backdrop-f
 .page .corps li{margin-bottom:.5rem}
 .page .corps li::marker{color:var(--vrose-fonce)}
 .page .retient{background:var(--vrose-clair);border-left:4px solid var(--vrose-fonce);border-radius:6px 18px 18px 6px;padding:1rem 1.3rem;margin:1.6rem 0}
+.histoire{max-width:70ch;margin-bottom:2.6rem}.histoire p{font-size:1.02rem;line-height:1.8}
+.board{columns:3;column-gap:1.2rem;margin-top:1.5rem}
+.board figure{break-inside:avoid;margin:0 0 1.2rem;background:#fff;border:1px solid #e6dfd2;border-radius:6px;padding:.6rem .6rem .6rem;box-shadow:0 6px 16px rgba(74,49,40,.08);transition:transform .35s cubic-bezier(.3,1.5,.5,1)}
+.board figure:nth-child(odd){transform:rotate(-1.2deg)}.board figure:nth-child(even){transform:rotate(1deg)}
+.board figure:hover{transform:rotate(0) scale(1.03);z-index:2;position:relative}
+.board figcaption{font-size:.72rem;letter-spacing:.04em;color:var(--brun-doux);margin:0 0 .5rem .1rem}
+.board img{width:100%;display:block;border-radius:3px}
+@media(max-width:760px){.board{columns:2;column-gap:.8rem}}
 .chiffres{display:flex;flex-wrap:wrap;gap:.8rem;margin:1.2rem 0 2rem}
 .chiffres div{background:var(--vrose);border-radius:26px 26px 26px 6px;padding:1rem 1.4rem;min-width:150px;transition:transform .35s cubic-bezier(.3,1.6,.5,1)}
 .chiffres div:hover{transform:translateY(-6px) rotate(-2deg)}
@@ -344,8 +352,9 @@ const forms=[
   texte:["Un master centré sur la stratégie de marque, les études de marché et la communication.","Parmi mes projets : une étude de marché pour la marque Berticot, sur le développement de son vin pétillant désalcoolisé.","Pour comprendre les attentes des consommateurs, j’ai combiné deux approches : un questionnaire auprès de 300 répondants et 10 entretiens qualitatifs, pour aller plus loin dans leurs motivations.","Les résultats ont été présentés devant les responsables de la marque, avec des recommandations concrètes."]}
 ];
 const passions=[
- {id:"manuel",tag:"Centre d’intérêt",titre:"Les activités manuelles",emoji:"🧶",resume:"Créer de mes mains, prendre le temps et laisser parler ma créativité.",faits:[],photos:true,
-  texte:["Créer de mes mains me détend et me permet de m’exprimer autrement.","Texte à personnaliser : parle ici de ce que tu aimes fabriquer (couture, peinture, bijoux, DIY…), de tes plus belles réalisations et de ce que cela t’apporte."]},
+ {id:"manuel",tag:"Centre d’intérêt",titre:"Les activités manuelles",emoji:"🧶",cover:"img/manuel-argile-magnets.jpg",resume:"Crochet, argile, céramique, couture… créer de mes mains, c’est mon moment d’apaisement.",faits:["Crochet","Argile autodurcissante","Peinture sur céramique","Couture","Aquarelle","Nail art"],
+  texte:["Depuis toute petite, j’aime faire des activités manuelles. Au fil des années, je me suis essayée à de nombreuses techniques : le nail art, le crochet, la peinture sur céramique, l’aquarelle, l’argile autodurcissante, la peinture par numéros, la couture, la pâte Fimo…","Chacune de ces activités m’apaise et fait grandir ma créativité. Elles m’apprennent aussi la patience, le souci du détail et le plaisir de mener un projet de A à Z, de l’idée jusqu’à l’objet terminé.","Je passe beaucoup de temps sur Pinterest, où je m’inspire d’idées, de couleurs et de matières que je réinterprète ensuite à ma façon, pour créer des pièces uniques.","Un aperçu de mes créations :"],
+  galerie:[{"f": "manuel-argile-morpion", "l": "Argile · morpion toast, œufs et avocat"}, {"f": "manuel-crochet-pingouin", "l": "Crochet · pingouin"}, {"f": "manuel-argile-magnets", "l": "Argile autodurcissante · magnets"}, {"f": "manuel-ceramique-resultat", "l": "Peinture sur céramique · le résultat"}, {"f": "manuel-crochet-chenille", "l": "Crochet · chenille"}, {"f": "manuel-couture-trousse", "l": "Couture · trousse et étui à lunettes"}, {"f": "manuel-crochet-tortue", "l": "Crochet · tortue"}, {"f": "manuel-argile-totoro", "l": "Argile · vide-poche Totoro"}, {"f": "manuel-ceramique-atelier", "l": "Peinture sur céramique · à l’atelier"}, {"f": "manuel-crochet-trousse", "l": "Crochet · trousse"}, {"f": "manuel-crochet-hippopotame", "l": "Crochet · hippopotame"}, {"f": "manuel-crochet-dessous-tasse", "l": "Crochet · dessous de tasse"}]},
  {id:"sport",tag:"Centre d’intérêt",titre:"Le sport",emoji:"🏃‍♀️",resume:"De la danse classique au ski, bouger fait partie de moi depuis toujours.",faits:["10 ans de danse classique","Équitation","Tennis","Ski et randonnée"],photos:true,
   texte:["J’ai toujours aimé bouger. Petite, j’ai fait dix ans de danse classique, et l’un de mes rêves était de devenir danseuse étoile !","En grandissant, ce rêve de petite fille s’est évanoui, mais ma passion pour cet art ne s’est jamais envolée. J’ai aussi fait de l’équitation pendant plusieurs années.","Plus grande, je me suis davantage tournée vers les sports collectifs, comme le tennis. Sans oublier ma passion pour le ski, la montagne et les randonnées."]},
  {id:"voyage",tag:"Centre d’intérêt",titre:"Les langues et les voyages",emoji:"🌏",resume:"Mon semestre à Shanghai et le plaisir de découvrir d’autres cultures.",faits:["Anglais courant","Chinois (HSK 3 et HSKK)"],photos:true,
@@ -417,16 +426,17 @@ function fiche(p){
   `<div class="corps">`+p.texte.map(t=>`<p>${t}</p>`).join("")+
   (p.liste?`<ul>${p.liste.map(l=>`<li>${l}</li>`).join("")}</ul>`:"")+
   (p.retient?`<p class="retient"><strong>Ce que j’en retiens :</strong> ${p.retient}</p>`:"")+`</div>`+
-  (p.photos?`<div class="photos">${[2,3].map(n=>`<div class="ph"><img src="img/${img}-${n}.jpg" alt="" onerror="this.remove()">✿</div>`).join("")}</div>`:"");
+  (p.galerie?`<div class="board">${p.galerie.map(g=>`<figure><figcaption>${g.l}</figcaption><img src="img/${g.f}.jpg" alt="${g.l}" loading="lazy"></figure>`).join("")}</div>`:"")+
+  (p.photos&&!p.galerie?`<div class="photos">${[2,3].map(n=>`<div class="ph"><img src="img/${img}-${n}.jpg" alt="" onerror="this.remove()">✿</div>`).join("")}</div>`:"");
 }
-const carte=p=>`<button class="carte" data-k="s" data-id="${p.id}"><div class="ph"><img src="img/${p.id}-1.jpg" alt="" onerror="this.remove()">${p.emoji||"✿"}</div><small>${p.tag}</small><h3>${p.titre}</h3><p>${p.resume}</p><span class="lire">Lire la suite</span></button>`;
+const carte=p=>`<button class="carte" data-k="s" data-id="${p.id}"><div class="ph"><img src="${p.cover||`img/${p.id}-1.jpg`}" alt="" onerror="this.remove()">${p.emoji||"✿"}</div><small>${p.tag}</small><h3>${p.titre}</h3><p>${p.resume}</p><span class="lire">Lire la suite</span></button>`;
 function ouvrirAbout(){
- ouvrirPage(`<button class="retour" id="retour">← Retour</button><div class="tag">À propos de moi</div><h2>Mes centres d’intérêt</h2><p style="margin-bottom:2rem">Ce que j’aime en dehors du travail, et qui nourrit ma façon de communiquer.</p><div class="blog">${passions.map(carte).join("")}</div>`,null,true);
+ ouvrirPage(`<button class="retour" id="retour">← Retour</button><div class="tag">À propos de moi</div><h2>Mes centres d’intérêt</h2><div class="histoire"><p>Je suis une fille curieuse, dynamique et créative. J’aime prendre le temps de me faire du bien, par le sport comme dans ma cuisine, où je prends plaisir à mijoter de bons petits plats pour les gens que j’aime.</p><p>Depuis toujours, l’art, la mode et la décoration m’attirent : les belles matières, les couleurs, les petits détails qui donnent du caractère à un objet, à une tenue ou à une pièce. Je suis sensible à l’esthétique, mais aussi à ce qu’elle raconte et aux émotions qu’elle fait naître.</p><p>De tout cela, j’ai retenu une chose : j’aime créer, et partager. Faire plaisir, donner envie, créer du lien, c’est ce qui me motive autant dans mes loisirs que dans mon métier. Voici quelques-uns de mes univers.</p></div><div class="blog">${passions.map(carte).join("")}</div>`,null,true);
 }
 document.addEventListener("click",e=>{
  const c=e.target.closest(".etape.cliquable,.carte");if(!c)return;
  const src={e:exps,f:forms,s:passions}[c.dataset.k],p=src.find(x=>x.id===c.dataset.id);
- if(c.dataset.k==="s"){ouvrirPage(fiche(p),ouvrirAbout);return}
+ if(c.dataset.k==="s"){ouvrirPage(fiche(p),ouvrirAbout,!!p.galerie);return}
  dernier=c;ouvrirPage(fiche(p));
 });
 function ferme(){page.hidden=true;document.body.style.overflow="";if(dernier)dernier.focus();}
