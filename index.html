@@ -178,6 +178,7 @@ nav{position:sticky;top:0;z-index:20;background:rgba(252,250,246,.92);backdrop-f
 .page .corps li::marker{color:var(--vrose-fonce)}
 .page .retient{background:var(--vrose-clair);border-left:4px solid var(--vrose-fonce);border-radius:6px 18px 18px 6px;padding:1rem 1.3rem;margin:1.6rem 0}
 .histoire{max-width:none;margin-bottom:2.8rem}.histoire p{font-size:1.02rem;line-height:1.8}
+.page h3.pays{font-size:1.7rem;margin:2.2rem 0 0}
 .board{columns:3;column-gap:1.4rem;margin-top:1.8rem}
 .board figure{break-inside:avoid;margin:0 0 1.6rem}
 .board figcaption{font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--brun-doux);margin:0 0 .45rem}
@@ -356,8 +357,9 @@ const passions=[
  {id:"sport",tag:"Centre d’intérêt",titre:"Le sport",emoji:"🏃‍♀️",cover:"img/sport-randonnee-annecy.jpg",resume:"De la danse classique à l’escalade, le sport m’a appris la persévérance et l’esprit d’équipe.",faits:["10 ans de danse classique","5 ans d’équitation","Escalade","Course à pied","Randonnée","Ski"],
   texte:["Tout commence par un rêve de petite fille : devenir danseuse étoile ! À 5 ans, je demande à mes parents de m’inscrire à des cours de danse classique, et c’est ainsi que débutent les dix premières années sportives de ma vie. Ce rêve s’est étiolé avec le temps, mais je reste une grande admiratrice de cet art.","La vie a fait que j’ai arrêté la danse, mais je me suis trouvé une autre passion, et pas des moindres : l’équitation. Pendant cinq ans, je passe mes galops, je me régale pendant les cours et j’aide ma monitrice lors de petits événements organisés dans mon centre.","En grandissant, j’ai eu envie de m’essayer à de nombreux sports : la musculation, la randonnée, le tennis, l’escalade, la course à pied, le badminton… que ce soit en club ou simplement entre amis. J’adore découvrir de nouvelles disciplines. Sans oublier celui qui m’accompagne depuis toujours et que je ne suis pas près d’arrêter : le ski. Je ne le pratique pas en club, mais c’est un vrai bonheur de retrouver la montagne dès que l’occasion se présente.","Ces sports m’ont appris la persévérance, l’esprit d’équipe, l’entraide… des valeurs qui me suivent aussi bien au quotidien qu’au travail.","Quelques souvenirs en images :"],
   galerie:[{"f": "sport-course-associative", "l": "Course à pied · course associative"}, {"f": "sport-escalade-bloc", "l": "Escalade · bloc"}, {"f": "sport-randonnee-annecy", "l": "Randonnée · Annecy"}, {"f": "sport-escalade-voie", "l": "Escalade · voie"}, {"f": "sport-randonnee-lozere", "l": "Randonnée · Lozère"}, {"f": "sport-randonnee-lac-charpal", "l": "Randonnée · lac de Charpal"}]},
- {id:"voyage",tag:"Centre d’intérêt",titre:"Les langues et les voyages",emoji:"🌏",resume:"Mon semestre à Shanghai et le plaisir de découvrir d’autres cultures.",faits:["Anglais courant","Chinois (HSK 3 et HSKK)"],photos:true,
-  texte:["Mon échange universitaire à Shanghai a nourri ma curiosité pour les autres cultures et ma façon de communiquer.","Texte à personnaliser : tes souvenirs, tes prochaines destinations."]}
+ {id:"voyage",tag:"Centre d’intérêt",titre:"Les langues et les voyages",emoji:"🌏",cover:"img/voyage-guilin-rizieres.jpg",resume:"Un semestre à Shanghai, une dizaine de pays visités et l’envie de découvrir toujours plus.",faits:["Anglais courant","Chinois (HSK 3 et HSKK)","Plus de 10 pays visités"],
+  texte:["Petite, j’ai eu la chance de voyager avec mes parents, et cette chance s’est poursuivie avec mes études : elles m’ont permis de partir un semestre en échange à Shanghai, en Chine. Une langue que j’avais apprise pendant mes trois années de licence.","Ce semestre a été l’un des plus beaux de ma vie, rempli de voyages, de découvertes et d’échanges avec les autres. J’en ai aussi profité pour visiter le Japon avec mes amis, ainsi que les Philippines.","Ces aventures m’ont donné encore plus envie de continuer. Découvrir de nouvelles cultures, de nouvelles langues, de nouvelles gastronomies et de nouveaux paysages, c’est l’une des choses que je préfère au monde !","J’ai déjà eu la chance de visiter plus d’une dizaine de pays : la Tunisie, l’Angleterre, l’Italie, l’Espagne (dont Majorque), l’Allemagne, la Belgique, Malte, les Pays-Bas, le Japon, les Philippines et la Chine.","Ces voyages m’ont ouvert l’esprit. Ils m’ont appris à m’adapter, à écouter et à échanger avec des personnes de cultures différentes : des qualités précieuses pour communiquer avec tous, en interne comme auprès des clients.","Mes photos, pays par pays :"],
+  groupes:[{"pays":"Chine","items":[{"f": "voyage-chongqing-place-du-peuple", "l": "Chongqing · place du Peuple"}, {"f": "voyage-chongqing-nuit", "l": "Chongqing · la ville de nuit"}, {"f": "voyage-fenghuang", "l": "Fenghuang · la vieille ville"}, {"f": "voyage-grande-muraille-paysage", "l": "Grande Muraille · Mutianyu"}, {"f": "voyage-grande-muraille-moi", "l": "Grande Muraille · Mutianyu"}, {"f": "voyage-guilin-riviere-li", "l": "Guilin · rivière Li"}, {"f": "voyage-guilin-rizieres", "l": "Guilin · rizières en terrasses"}, {"f": "voyage-hangzhou-hanfu", "l": "Hangzhou · en tenue traditionnelle"}]}]},
 ];
 const competences=[
  {nom:"Communication interne",ex:["Campagnes RH, RSE et Business pour 45 000 collaborateurs en France (Capgemini).","Accompagnement du changement auprès d’une dizaine de managers d’usine, avec un mode opératoire et une formation (Michelin).","Supports print et digitaux pour la communication interne d’un site industriel."],faits:["45 000 collaborateurs","10 managers accompagnés"]},
@@ -425,6 +427,7 @@ function fiche(p){
   `<div class="corps">`+p.texte.map(t=>`<p>${t}</p>`).join("")+
   (p.liste?`<ul>${p.liste.map(l=>`<li>${l}</li>`).join("")}</ul>`:"")+
   (p.retient?`<p class="retient"><strong>Ce que j’en retiens :</strong> ${p.retient}</p>`:"")+`</div>`+
+  (p.groupes?p.groupes.map(g=>`<h3 class="pays">${g.pays}</h3><div class="board">${g.items.map(i=>`<figure><figcaption>${i.l}</figcaption><img src="img/${i.f}.jpg" alt="${i.l}" loading="lazy"></figure>`).join("")}</div>`).join(""):"")+
   (p.galerie?`<div class="board">${p.galerie.map(g=>`<figure><figcaption>${g.l}</figcaption><img src="img/${g.f}.jpg" alt="${g.l}" loading="lazy"></figure>`).join("")}</div>`:"")+
   (p.photos&&!p.galerie?`<div class="photos">${[2,3].map(n=>`<div class="ph"><img src="img/${img}-${n}.jpg" alt="" onerror="this.remove()">✿</div>`).join("")}</div>`:"");
 }
@@ -435,7 +438,7 @@ function ouvrirAbout(){
 document.addEventListener("click",e=>{
  const c=e.target.closest(".etape.cliquable,.carte");if(!c)return;
  const src={e:exps,f:forms,s:passions}[c.dataset.k],p=src.find(x=>x.id===c.dataset.id);
- if(c.dataset.k==="s"){ouvrirPage(fiche(p),ouvrirAbout,!!p.galerie);return}
+ if(c.dataset.k==="s"){ouvrirPage(fiche(p),ouvrirAbout,!!(p.galerie||p.groupes));return}
  dernier=c;ouvrirPage(fiche(p));
 });
 function ferme(){page.hidden=true;document.body.style.overflow="";if(dernier)dernier.focus();}
