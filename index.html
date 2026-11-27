@@ -183,7 +183,7 @@ nav{position:sticky;top:0;z-index:20;background:rgba(252,250,246,.92);backdrop-f
 .board{columns:3;column-gap:1.4rem;margin-top:1.8rem}
 .board figure{break-inside:avoid;margin:0 0 1.6rem}
 .board figcaption{font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--brun-doux);margin:0 0 .45rem}
-.board img{width:100%;display:block;border-radius:10px}
+.board img{width:100%;height:auto;display:block;border-radius:10px}
 @media(max-width:760px){.board{columns:2;column-gap:.8rem}}
 .chiffres{display:flex;flex-wrap:wrap;gap:.8rem;margin:1.2rem 0 2rem}
 .chiffres div{background:var(--vrose);border-radius:26px 26px 26px 6px;padding:1rem 1.4rem;min-width:150px;transition:transform .35s cubic-bezier(.3,1.6,.5,1)}
@@ -407,6 +407,8 @@ document.getElementById("piste-c").innerHTML=competences.map(x=>cc(x)).join("");
 document.getElementById("puces").innerHTML=outils.map(x=>`<span class="puce">${x.nom}</span>`).join("");
 
 /* ---------- Pages ouvertes ---------- */
+const DIM={"manuel-argile-magnets": [800, 1066], "manuel-argile-morpion": [800, 1067], "manuel-argile-totoro": [800, 1067], "manuel-ceramique-atelier": [800, 1067], "manuel-ceramique-resultat": [800, 1067], "manuel-couture-chouchou": [800, 1067], "manuel-couture-trousse": [800, 1028], "manuel-crochet-chenille": [800, 1067], "manuel-crochet-dessous-tasse": [653, 1100], "manuel-crochet-hippopotame": [800, 1067], "manuel-crochet-pingouin": [800, 1067], "manuel-crochet-tortue": [800, 1067], "manuel-crochet-trousse": [800, 1067], "manuel-crochet-vide-poche-bijoux": [800, 1067], "sport-course-associative": [800, 1067], "sport-escalade-bloc": [800, 1067], "sport-escalade-voie": [800, 1067], "sport-randonnee-annecy": [800, 1067], "sport-randonnee-lac-charpal": [800, 1067], "sport-randonnee-lozere": [800, 1067], "voyage-chongqing-nuit": [800, 600], "voyage-chongqing-place-du-peuple": [800, 1067], "voyage-fenghuang": [800, 1067], "voyage-grande-muraille-moi": [800, 600], "voyage-grande-muraille-paysage": [800, 1067], "voyage-guilin-riviere-li": [800, 1067], "voyage-guilin-rizieres": [800, 1067], "voyage-hangzhou-hanfu": [800, 1067], "voyage-japon-asakusa": [800, 1067], "voyage-japon-fushimi-inari": [800, 1067], "voyage-japon-kyoto-bambous": [800, 1067], "voyage-japon-mont-fuji": [800, 1067], "voyage-japon-nara-cerf": [800, 1067], "voyage-japon-nara-temple": [800, 1067], "voyage-japon-osaka": [800, 1067], "voyage-japon-ramen": [800, 1067], "voyage-japon-shibuya": [800, 1067], "voyage-japon-skytree": [800, 1067], "voyage-pekin-cite-interdite-detail": [800, 1067], "voyage-pekin-cite-interdite": [800, 600], "voyage-pekin-palais-ete-lotus": [800, 1067], "voyage-pekin-palais-ete-rochers": [800, 1067], "voyage-philippines-bohol-chocolate-hills": [800, 600], "voyage-philippines-coron-coucher-soleil": [800, 1067], "voyage-philippines-coron-kayangan": [800, 1067], "voyage-philippines-coron-twin-lagoon": [800, 1067], "voyage-philippines-el-nido-miniloc": [800, 1067], "voyage-philippines-panglao": [800, 1067], "voyage-shanghai-bund": [800, 600], "voyage-shanghai-jingan": [800, 1067], "voyage-shanghai-tianzifang": [800, 1067], "voyage-shanghai-yuyuan-lanternes": [800, 1067], "voyage-shanghai-yuyuan": [800, 1067], "voyage-suzhou-riviere": [800, 1067], "voyage-suzhou-rue": [800, 1067], "voyage-wuxi": [800, 1067], "voyage-zhangjiajie-montagnes": [800, 1067], "voyage-zhangjiajie-tianmenshan": [800, 1067]};
+const dim=f=>DIM[f]?`width="${DIM[f][0]}" height="${DIM[f][1]}"`:"";
 const page=document.getElementById("page"),cont=document.getElementById("page-contenu");let dernier,retourFn=null;
 function compte(el){
  const t=el.textContent.trim(),m=t.match(/^(\+?)(\d+(?:[\s  ]\d{3})*)(.*)$/);
@@ -428,8 +430,8 @@ function fiche(p){
   `<div class="corps">`+p.texte.map(t=>`<p>${t}</p>`).join("")+
   (p.liste?`<ul>${p.liste.map(l=>`<li>${l}</li>`).join("")}</ul>`:"")+
   (p.retient?`<p class="retient"><strong>Ce que j’en retiens :</strong> ${p.retient}</p>`:"")+`</div>`+
-  (p.groupes?p.groupes.map(g=>`<h3 class="pays">${g.pays}</h3><div class="board">${g.items.map(i=>`<figure><figcaption>${i.l}</figcaption><img src="img/${i.f}.jpg" alt="${i.l}" loading="lazy"></figure>`).join("")}</div>`).join(""):"")+
-  (p.galerie?`<div class="board">${p.galerie.map(g=>`<figure><figcaption>${g.l}</figcaption><img src="img/${g.f}.jpg" alt="${g.l}" loading="lazy"></figure>`).join("")}</div>`:"")+
+  (p.groupes?p.groupes.map(g=>`<h3 class="pays">${g.pays}</h3><div class="board">${g.items.map(i=>`<figure><figcaption>${i.l}</figcaption><img src="img/${i.f}.jpg" alt="${i.l}" ${dim(i.f)}></figure>`).join("")}</div>`).join(""):"")+
+  (p.galerie?`<div class="board">${p.galerie.map(g=>`<figure><figcaption>${g.l}</figcaption><img src="img/${g.f}.jpg" alt="${g.l}" ${dim(g.f)}></figure>`).join("")}</div>`:"")+
   (p.photos&&!p.galerie?`<div class="photos">${[2,3].map(n=>`<div class="ph"><img src="img/${img}-${n}.jpg" alt="" onerror="this.remove()">✿</div>`).join("")}</div>`:"");
 }
 const carte=p=>`<button class="carte" data-k="s" data-id="${p.id}"><div class="ph"><img src="${p.cover||`img/${p.id}-1.jpg`}" alt="" onerror="this.remove()">${p.emoji||"✿"}</div><small>${p.tag}</small><h3>${p.titre}</h3><p>${p.resume}</p><span class="lire">Lire la suite</span></button>`;
